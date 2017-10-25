@@ -16,6 +16,7 @@ export default class Screen2 extends Component {
           navigation.goBack();
         }}
       >
+        <Text style={{ padding: 10 }}>Got object '{navigation.state.params.task.title}'</Text>
         <Text style={{ padding: 10 }}>Click me to go back</Text>
       </TouchableOpacity>
     </View>

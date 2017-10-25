@@ -14,7 +14,7 @@ export default class Screen1 extends Component {
     <View>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Screen2');
+          navigation.navigate('Screen2', { task: realm.objectForPrimaryKey('Task', 'pk')});
         }}
       >
         <Text style={{ padding: 10 }}>Click me to go to Screen 2</Text>
