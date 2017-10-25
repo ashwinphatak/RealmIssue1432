@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import realm from './db';
 
 export default class Screen1 extends Component {
   static navigationOptions = () => ({

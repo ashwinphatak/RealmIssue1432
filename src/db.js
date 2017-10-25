@@ -1,3 +1,5 @@
+import Realm from 'realm';
+
 const TaskSchema = {
   name: 'Task',
   primaryKey: 'id',
@@ -14,7 +16,16 @@ const TaskSchema = {
   },
 }
 
-const realm = new Realm({ schema: [TaskSchema]});
+const realm = new Realm({ schema: [TaskSchema] });
+
+if (realm.objects('Task').length === 0) {
+  realm.write(() => {
+    realm.create('Task', {
+      id: 'pk',
+      title: 'My Task',
+    });
+  });
+}
 
 export default realm;
 
